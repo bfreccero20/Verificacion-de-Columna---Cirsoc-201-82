@@ -34,7 +34,7 @@ export default function App() {
     setMensaje('Procesando...');
 
     try {
-      const response = await fetch("https://cirsoc-backend.onrender.com/api/verificar", {
+      const response = await fetch("https://cirsoc-backend.onrender.com", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData)

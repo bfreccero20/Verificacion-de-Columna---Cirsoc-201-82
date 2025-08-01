@@ -1,5 +1,3 @@
-const generateReport = require("./exportador/generateReport");
-
 module.exports = async (req, res) => {
   try {
     const buffer = await generateReport(req.body);
@@ -9,6 +7,7 @@ module.exports = async (req, res) => {
     });
     res.send(buffer);
   } catch (err) {
+    console.error("❌ Error generando el informe:", err);  // 👈 Agregá esto
     res.status(500).send("Error generando el informe");
   }
 };
